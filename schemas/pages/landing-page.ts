@@ -20,6 +20,7 @@ export const landingPage = {
       title: 'Sections',
       of: [
         { type: 'hero' },
+        { type: 'contentImageBlock' },
       ]
     },
   ],

@@ -6,6 +6,7 @@ import { link } from "./common/link";
 import { dropdown } from "./components/dropdown";
 import { image } from "./common/image";
 import { blockContent } from "./common/block-content";
+import { contentImageBlock } from "./modules/content-image-block";
 
 export const schemas = [
   blockContent,
@@ -16,4 +17,5 @@ export const schemas = [
   link,
   dropdown,
   hero,
+  contentImageBlock,
 ];
