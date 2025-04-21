@@ -10,6 +10,7 @@ import { contentImageBlock } from "./modules/content-image-block";
 import { testimonials } from "./modules/testimonials";
 import { logoCarousel } from "./modules/logo-carousel";
 import { featureCards } from "./modules/feature-cards";
+import { contactForm } from "./modules/contact-form";
 
 export const schemas = [
   blockContent,
@@ -24,4 +25,5 @@ export const schemas = [
   testimonials,
   logoCarousel,
   featureCards,
+  contactForm
 ];

@@ -23,7 +23,8 @@ export const landingPage = {
         { type: 'contentImageBlock' },
         { type: 'testimonials' },
         { type: 'logoCarousel' },
-        { type: 'featureCards' }
+        { type: 'featureCards' },
+        { type: 'contactForm' },
       ]
     },
   ],
