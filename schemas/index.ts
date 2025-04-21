@@ -7,6 +7,9 @@ import { dropdown } from "./components/dropdown";
 import { image } from "./common/image";
 import { blockContent } from "./common/block-content";
 import { contentImageBlock } from "./modules/content-image-block";
+import { testimonials } from "./modules/testimonials";
+import { logoCarousel } from "./modules/logo-carousel";
+import { featureCards } from "./modules/feature-cards";
 
 export const schemas = [
   blockContent,
@@ -18,4 +21,7 @@ export const schemas = [
   dropdown,
   hero,
   contentImageBlock,
+  testimonials,
+  logoCarousel,
+  featureCards,
 ];

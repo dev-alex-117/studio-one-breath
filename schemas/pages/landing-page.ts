@@ -21,6 +21,9 @@ export const landingPage = {
       of: [
         { type: 'hero' },
         { type: 'contentImageBlock' },
+        { type: 'testimonials' },
+        { type: 'logoCarousel' },
+        { type: 'featureCards' }
       ]
     },
   ],
