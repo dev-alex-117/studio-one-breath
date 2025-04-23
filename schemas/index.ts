@@ -1,6 +1,6 @@
 import { landingPage } from "./pages/landing-page";
 import { header } from "./modules/header";
-import { footer } from "./modules/footer";
+// import { footer } from "./modules/footer";
 import { hero } from "./modules/hero";
 import { link } from "./common/link";
 import { dropdown } from "./components/dropdown";
@@ -17,7 +17,7 @@ export const schemas = [
   image,
   landingPage,
   header,
-  footer,
+  // footer,
   link,
   dropdown,
   hero,

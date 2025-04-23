@@ -5,11 +5,9 @@ import { schemas } from './schemas';
 import deskStructure from './deskStructure.js';
 
 export default defineConfig({
-  name: 'default',
-  title: 'One Breath',
-
-  projectId: 'tmgo6aq6',
-  dataset: 'production',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID  || '',
+  dataset: process.env.SANITY_STUDIO_DATASET || '',
+  studioHost: process.env.SANITY_STUDIO_HOSTNAME || '',
 
   plugins: [
     structureTool({

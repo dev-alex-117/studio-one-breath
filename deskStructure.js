@@ -11,14 +11,14 @@ export default (S) =>
             .documentId('header')
         ),
       // Singleton Footer
-      S.listItem()
-        .title('Global Footer')
-        .icon(() => '🔗')
-        .child(
-          S.editor()
-            .schemaType('footer')
-            .documentId('footer')
-        ),
+      // S.listItem()
+      //   .title('Global Footer')
+      //   .icon(() => '🔗')
+      //   .child(
+      //     S.editor()
+      //       .schemaType('footer')
+      //       .documentId('footer')
+      //   ),
 
       S.documentTypeListItem('landingPage'),
     ])
