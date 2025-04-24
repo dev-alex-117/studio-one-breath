@@ -4,18 +4,23 @@ export const hero = {
   title: 'Hero',
   fields: [
     {
+      name: 'sectionId',
+      type: 'string',
+      title: 'Section ID',
+    },
+    {
       name: 'title',
-      type: 'blockContent',
+      type: 'string',
       title: 'Title',
     },
     {
       name: 'subtitle',
-      type: 'blockContent',
+      type: 'basicRichTextEditor',
       title: 'Subtitle',
     },
     {
       name: 'description',
-      type: 'string',
+      type: 'basicRichTextEditor',
       title: 'Description',
     },
     {
@@ -27,7 +32,7 @@ export const hero = {
       name: 'cta',
       type: 'link',
       title: 'Call to Action',
-    }
+    },
   ],
   preview: {
     prepare() {

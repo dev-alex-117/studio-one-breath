@@ -6,6 +6,11 @@ export const featureCards = {
   title: 'Feature Cards',
   fields: [
     {
+      name: 'sectionId',
+      type: 'string',
+      title: 'Section ID',
+    },
+    {
       name: 'title',
       type: 'string',
       title: 'Title',
@@ -13,42 +18,7 @@ export const featureCards = {
     {
       name: 'description',
       title: 'Description',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-          styles: [
-            { title: 'Normal', value: 'normal' }
-          ],
-          lists: [],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'URL',
-                  },
-                  {
-                    name: 'newTab',
-                    type: 'boolean',
-                    title: 'Open in new tab',
-                    initialValue: true,
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ]
+      type: 'basicRichTextEditor',
     },
     {
       name: 'cards',
@@ -72,40 +42,7 @@ export const featureCards = {
             {
               name: 'description',
               title: 'Description',
-              type: 'array',
-              of: [
-                {
-                  type: 'block',
-                  styles: [{ title: 'Normal', value: 'normal' }],
-                  lists: [],
-                  marks: {
-                    decorators: [
-                      { title: 'Strong', value: 'strong' },
-                      { title: 'Emphasis', value: 'em' },
-                    ],
-                    annotations: [
-                      {
-                        name: 'link',
-                        type: 'object',
-                        title: 'Link',
-                        fields: [
-                          {
-                            name: 'href',
-                            type: 'url',
-                            title: 'URL',
-                          },
-                          {
-                            name: 'newTab',
-                            type: 'boolean',
-                            title: 'Open in new tab',
-                            initialValue: true,
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                }
-              ]
+              type: 'basicRichTextEditor',
             },
           ],
           options: {
@@ -122,10 +59,14 @@ export const featureCards = {
     },
   ],
   preview: {
-    prepare() {
-      return {
-        title: 'Feature Cards',
-      };
+    select: {
+      title: 'title'
     },
-  },
+    prepare(selection: any) {
+      const { title } = selection;
+      return {
+        title: title || 'Feature Cards'
+      }
+    }
+  }
 };

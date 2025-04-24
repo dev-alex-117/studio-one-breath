@@ -17,6 +17,15 @@ export const link = {
       }),
     },
     { name: 'isExternal', type: 'boolean', title: 'Open in new tab?' },
+  ],
+};
+
+export const linkWithIcon = {
+  name: 'linkWithIcon',
+  type: 'object',
+  title: 'Link with Icon',
+  fields: [
+    ...link.fields,
     { name: 'icon', type: 'image', title: 'Icon' },
   ],
   preview: {
@@ -24,4 +33,4 @@ export const link = {
       title: 'label',
     },
   }
-}
+};

@@ -4,6 +4,11 @@ export const contactForm = {
   title: 'Contact Form',
   fields: [
     {
+      name: 'sectionId',
+      type: 'string',
+      title: 'Section ID',
+    },
+    {
       name: 'title',
       type: 'string',
       title: 'Form Title',

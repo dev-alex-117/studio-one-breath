@@ -6,6 +6,11 @@ export const testimonials = {
   title: 'Testimonials',
   fields: [
     {
+      name: 'sectionId',
+      type: 'string',
+      title: 'Section ID',
+    },
+    {
       name: 'title',
       type: 'string',
       title: 'Title',
@@ -31,8 +36,11 @@ export const testimonials = {
             },
             {
               name: 'avatar',
-              type: 'imageWithMetadata',
+              type: 'image',
               title: 'Avatar',
+              options: {
+                hotspot: true
+              }
             },
             {
               name: 'name',
@@ -60,10 +68,14 @@ export const testimonials = {
     },
   ],
   preview: {
-    prepare() {
-      return {
-        title: 'Testimonials',
-      };
+    select: {
+      title: 'title'
     },
-  },
+    prepare(selection: any) {
+      const { title } = selection;
+      return {
+        title: title || 'Testimonials'
+      }
+    }
+  }
 };

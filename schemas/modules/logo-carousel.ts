@@ -6,42 +6,14 @@ export const logoCarousel = {
   title: 'Logo Carousel',
   fields: [
     {
+      name: 'sectionId',
+      type: 'string',
+      title: 'Section ID',
+    },
+    {
       name: 'title',
       title: 'Title',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: [],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'URL',
-                  },
-                  {
-                    name: 'newTab',
-                    type: 'boolean',
-                    title: 'Open in new tab',
-                    initialValue: true,
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ]
+      type: 'string',
     },
     {
       name: 'logos',
@@ -53,14 +25,40 @@ export const logoCarousel = {
           title: 'Logo',
           fields: [
             {
+              name: 'title',
+              type: 'string',
+              title: 'Title',
+              description: 'The title of the logo',
+            },
+            {
               name: 'image',
-              type: 'imageWithMetadata',
+              type: 'image',
               title: 'Image',
+              options: {
+                hotspot: true
+              }
+            },
+            {
+              name: 'url',
+              type: 'string',
+              title: 'URL',
+              description: 'Where the logo should navigate to when clicked',
             },
           ],
           options: {
             collapsible: true,
             collapsed: false,
+          },
+          preview: {
+            select: {
+              title: 'title',
+            },
+            prepare(selection: any) {
+              const { title } = selection;
+              return {
+                title: title || 'Logo',
+              };
+            },
           },
         }
       ],
@@ -72,10 +70,14 @@ export const logoCarousel = {
     },
   ],
   preview: {
-    prepare() {
-      return {
-        title: 'Logo Carousel',
-      };
+    select: {
+      title: 'title'
     },
-  },
+    prepare(selection: any) {
+      const { title } = selection;
+      return {
+        title: title || 'Logo Carousel'
+      }
+    }
+  }
 };

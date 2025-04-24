@@ -1,10 +1,13 @@
-import type { Rule } from 'sanity';
-
 export const contentImageBlock = {
   name: 'contentImageBlock',
   type: 'object',
   title: 'Content Image Block',
   fields: [
+    {
+      name: 'sectionId',
+      type: 'string',
+      title: 'Section ID',
+    },
     {
       name: 'title',
       type: 'string',
@@ -12,15 +15,8 @@ export const contentImageBlock = {
     },
     {
       name: 'description',
-      type: 'blockContent',
+      type: 'basicRichTextEditor',
       title: 'Description',
-      options: {
-        spellCheck: true,
-        decorators: [
-          {title: 'Strong', value: 'strong'},
-          {title: 'Emphasis', value: 'em'}
-        ]
-      }
     },
     {
       name: 'image',
@@ -29,27 +25,18 @@ export const contentImageBlock = {
     },
     {
       name: 'link',
-      type: 'object',
+      type: 'link',
       title: 'Link',
-      fields: [
-        { name: 'label', type: 'string', title: 'Label' },
-        {
-          name: 'url',
-          type: 'string',
-          title: 'URL',
-          description: 'Can be a relative or absolute URL',
-          validation: (rule: Rule) => rule.uri({
-            allowRelative: true,
-            scheme: ['http', 'https', 'mailto', 'tel']
-          }),
-        },
-      ],
     }
   ],
   preview: {
-    prepare() {
+    select: {
+      title: 'title'
+    },
+    prepare(selection: any) {
+      const { title } = selection;
       return {
-        title: 'Content Image Block'
+        title: title || 'Content Image Block'
       }
     }
   }
